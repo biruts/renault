@@ -97,5 +97,79 @@ $icon: 'FontAwesome';
 }
 
 
+body {
+  color: $gray;
+}
+
+
+//Footer
+footer {
+  border-bottom: 3px solid $yellow;
+  padding-bottom: 10px;
+  .infos_footer {
+    border-bottom: 1px solid $gray;
+    margin-bottom: 10px;
+    display: flex; 
+    justify-content: space-around;
+    text-align: center;
+    .central_vendas {
+      font-size: 0.7rem;      
+      strong {
+        font-size: 1.0rem;
+        font-style: italic;        
+        padding: 0 2px;
+      }
+    }
+    .social {
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        &:before {
+          content: 'Sigam nossas Redes Sociais:';          
+          font-size: 0.7rem;
+          height: 30px;
+          vertical-align: middle;
+          display: inline-block;          
+        }
+          li {
+            display: inline-block;            
+            margin: 0 5px;
+            a {
+              color: $gray;
+              font-size: 1.4rem;
+              &:hover {
+                color: $yellow;
+                transition: 0.3s;
+              }
+            }
+          }
+      }
+    }
+  }
+  .nav_footer {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+      li {
+        display: inline-block;
+        margin: 5px 5px 15px;
+        a {
+            color: $gray;
+            font-size: 0.9rem;
+            font-weight: bolder;
+            &:hover {
+              color: $yellow;
+              transition: 0.3s;
+              text-decoration: none;
+            }
+          }
+      }
+  }
+  .copy {
+    font-size: 0.7rem;
+  }
+}
+
 //Media Queries
 @import 'client_style_queries.scss';

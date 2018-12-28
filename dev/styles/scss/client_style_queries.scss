@@ -154,6 +154,38 @@ $mq-desktop           : 1200px !default;
   }
 }
 
-@include mobile-only() {}
+@include mobile-only() {
+
+  //Foofer 
+  footer {
+    .infos_footer {
+      display: block;
+      margin-bottom: 0px;
+        .central_vendas {
+          strong {
+            display: block;
+            font-size: 0.9rem;
+          }
+        }      
+      .social {
+        ul {
+          margin-bottom: 10px;
+          &:before {
+            display: block;
+            margin-top: 12px;
+            margin-bottom: 5px;
+            height: 12px;
+          }
+        }
+      }
+    }    
+    .nav_footer {
+      display: none;      
+    }
+    .copy {
+      margin-top: 10px;
+    }
+  }
+}
 @include mobile-portrait-only() {}
 // //END MOBILE

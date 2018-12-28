@@ -6,6 +6,7 @@ var jsmin = require('gulp-jsmin');
 var rename = require('gulp-rename');
 var uglifycss = require('gulp-uglifycss'); 
 var imagemin = require('gulp-imagemin');
+var htmlPartial = require('gulp-html-partial');
 var browserSync = require('browser-sync');
 var watch = require('gulp-watch');
  
@@ -16,6 +17,15 @@ gulp.task('compileBootstrap', function() {
     .pipe(sass())
     .pipe(uglifycss())
     .pipe(gulp.dest('./dist/css/'));
+});
+
+//Partials
+gulp.task('partials', function () {
+    gulp.src(['./dev/*.html'])
+        .pipe(htmlPartial({
+            basePath: './dev/partials/'
+        }))
+        .pipe(gulp.dest('./dist/'));
 });
 
 //SCSS
@@ -95,13 +105,14 @@ gulp.task('html', function() {
   .pipe(gulp.dest('./dist/'));
 });
 
-gulp.task('default',['compileBootstrap', 'sass', 'imagemin', 'lib', 'js', 'validator']);
+gulp.task('default',['compileBootstrap', 'partials', 'sass', 'imagemin', 'lib', 'js', 'validator']);
 
 // Watch
 gulp.task('watch', function() {
   gulp.watch('./dev/images/**/*', ['imagemin']);
   gulp.watch('./dev/js/**/*.js', ['lib', 'js']);
   gulp.watch('./dev/styles/scss/*.scss', ['sass']);
+  gulp.watch('./dev/partials/*.html', ['partials']);
   gulp.watch('./dev/*.html', ['html']);
 
   browserSync.init('dist/**/*', {

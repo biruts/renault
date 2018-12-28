@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "OY Design",
+  "author": "Leo Araujo",
   "license": "ISC",
   "devDependencies": {
     "@fortawesome/fontawesome-free": "^5.6.3",
@@ -20,6 +20,7 @@
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.1",
     "gulp-customize-bootstrap": "0.0.6",
+    "gulp-html-partial": "^1.0.1",
     "gulp-imagemin": "^4.1.0",
     "gulp-jsmin": "^0.1.5",
     "gulp-rename": "^1.4.0",
