@@ -1,0 +1,101 @@
+//Colors
+@import 'client_colors.scss';
+//Fonts
+@import 'client_fontface.scss';
+$font_padrao: 'helvetica_r', sans-serif;
+$icon: 'FontAwesome';
+
+
+//Mixins Border-radius
+@mixin border-radius($radius) {
+	border-radius: $radius;
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+}
+@mixin border-radii($topleft, $topright, $bottomright, $bottomleft) {
+	border-top-left-radius: $topleft;
+	border-top-right-radius: $topright;
+	border-bottom-right-radius: $bottomright;
+	border-bottom-left-radius: $bottomleft;
+	-webkit-border-top-left-radius: $topleft;
+	-webkit-border-top-right-radius: $topright;
+	-webkit-border-bottom-right-radius: $bottomright;
+	-webkit-border-bottom-left-radius: $bottomleft;
+	-moz-border-radius-topleft: $topleft;
+	-moz-border-radius-topright: $topright;
+	-moz-border-radius-bottomright: $bottomright;
+	-moz-border-radius-bottomleft: $bottomleft;
+}
+
+//Mixins Vertical-align
+@mixin vertical-align {
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+
+//Mixins Placeholder
+@mixin optional-at-root($sel) {
+  @at-root #{if(not &, $sel, selector-append(&, $sel))} {
+    @content;
+  }
+}
+
+@mixin placeholder {
+  @include optional-at-root('::-webkit-input-placeholder') {
+    @content;
+  }
+
+  @include optional-at-root(':-moz-placeholder') {
+    @content;
+  }
+
+  @include optional-at-root('::-moz-placeholder') {
+    @content;
+  }
+
+  @include optional-at-root(':-ms-input-placeholder') {
+    @content;
+  }
+}
+
+//Mixins animation
+@mixin fade-up-in($vendor: "") {
+  0% {
+    opacity: 0;
+    #{$vendor}transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    #{$vendor}transform: translateY(0);
+  }
+}
+
+//Placeholder
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: $gray !important;
+  font-family: 'helvetica_n' !important;
+  font-size: 0.9rem;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: $gray !important;
+  font-family: 'helvetica_n' !important;
+  font-size: 0.9rem;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: $gray !important;
+  font-family: 'helvetica_n' !important;
+  font-size: 0.9rem;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: $gray !important;
+  font-family: 'helvetica_n' !important;
+  font-size: 0.9rem;
+}
+
+
+//Media Queries
+@import 'client_style_queries.scss';

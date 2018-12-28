@@ -1,0 +1,41 @@
+{
+  "name": "renault",
+  "version": "1.0.0",
+  "description": "consórcio renault",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "OY Design",
+  "license": "ISC",
+  "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.6.3",
+    "animate.css": "^3.7.0",
+    "bootstrap": "^4.1.1",
+    "bootstrap-select": "^1.13.1",
+    "browser-sync": "^2.24.6",
+    "counterup": "^1.0.2",
+    "ekko-lightbox": "^5.3.0",
+    "font-awesome": "^4.7.0",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-customize-bootstrap": "0.0.6",
+    "gulp-imagemin": "^4.1.0",
+    "gulp-jsmin": "^0.1.5",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.1",
+    "gulp-uglifycss": "^1.1.0",
+    "gulp-watch": "^5.0.1",
+    "jquery": "^1.12.4",
+    "jquery-easing": "0.0.1",
+    "jquery-form-validator": "^2.3.77",
+    "jquery-mask-plugin": "^1.14.15",
+    "jquery-plugin-viewport-checker": "^1.8.3",
+    "popper.js": "^1.14.3",
+    "sass-mediaqueries": "^1.6.1",
+    "simple-line-icons": "^2.4.1",
+    "smooth-scroll": "^14.2.1",
+    "sticky-content": "^1.0.6",
+    "waypoints": "^4.0.1"
+  }
+}
