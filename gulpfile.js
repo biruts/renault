@@ -22,7 +22,7 @@ gulp.task('compileBootstrap', function() {
 gulp.task('sass', function () {
   return gulp.src([
   	'./dev/styles/scss/**/*.scss',
-    './node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss',
+    './node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss',    
   	'./node_modules/font-awesome/scss/font-awesome.scss',
   	'./node_modules/simple-line-icons/scss/simple-line-icons.scss',
   	'./node_modules/bootstrap-select/dist/css/bootstrap-select.css',    
@@ -53,7 +53,7 @@ gulp.task('imagemin', function() {
 gulp.task('fonts', function() {
   return gulp.src([
   	'./node_modules/font-awesome/fonts/**/*',
-  	'./node_modules/simple-line-icons/fonts/**/*'
+    './node_modules/@fortawesome/fontawesome-free/webfonts/**/*',  	
   ])
   .pipe(gulp.dest('./dist/fonts'))
 });
@@ -64,9 +64,11 @@ gulp.task('lib', function(){
     './node_modules/jquery/dist/jquery.min.js',
     './node_modules/bootstrap/dist/js/bootstrap.min.js',
     './node_modules/popper.js/dist/umd/popper.min.js',
+    './node_modules/@fortawesome/fontawesome-free/js/all.min.js',
+    './node_modules/@fortawesome/fontawesome-free/js/fontawesome.min.js',
     './node_modules/waypoints/lib/jquery.waypoints.min.js',
     './node_modules/counterup/jquery.counterup.min.js',
-    './node_modules/jquery.easing/jquery.easing.min.js',
+    './node_modules/jquery.easing/jquery.easing.min.js',    
     './node_modules/bootstrap-select/dist/js/bootstrap-select.min.js',	
 	  './node_modules/jquery-mask-plugin/dist/jquery.mask.min.js',
     './node_modules/jquery-m',
