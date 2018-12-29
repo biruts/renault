@@ -2,7 +2,7 @@
 @import 'client_colors.scss';
 //Fonts
 @import 'client_fontface.scss';
-$font_padrao: 'helvetica_r', sans-serif;
+$font_padrao: 'Roboto', sans-serif;
 $icon: 'FontAwesome';
 
 
@@ -95,12 +95,156 @@ $icon: 'FontAwesome';
   font-family: 'helvetica_n' !important;
   font-size: 0.9rem;
 }
-
+.btn_client {
+  background: $yellow;
+  color: $gray;
+  transition: 0.3s;
+    &:hover {
+      background: $orange;
+      color: #ffffff;
+      transition: 0.3s;
+    }
+}
 
 body {
   color: $gray;
 }
 
+//Header
+header {
+  .navbar {
+    padding: 0 1.0rem;
+    &.bg-light {
+      background-color: #ffffff !important;
+    }    
+    .nav-item {      
+      .nav-link {
+        padding-right: 1.1rem;
+        padding-left: 1.1rem;
+        @include border-radius (30px); 
+        color: $gray;
+        transition: 0.3s; 
+        &:hover {
+          background: $yellow;
+          transition: 0.3s;    
+        }      
+      }
+      &.active {
+        background: $yellow;        
+        @include border-radius (30px); 
+      }
+    }  
+  }  
+  figure {
+    margin-bottom: 0;
+  }
+  .social_header {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 0 20px;
+      li {
+        display: inline-block;
+        margin: 5px;
+        font-size: 1.2rem;
+          a {
+            color: $gray;
+            &:hover {
+              color: $yellow;
+              transition: 0.3s;
+            }
+          }
+      }
+  }
+}
+
+//Carousel
+.carousel {
+  margin-bottom: 50px;
+  .chamadaFixa {
+    position: absolute;
+    font-weight: 700;
+    font-size: 2.8rem;
+    color: $gray;
+    line-height: 2.8rem;
+    margin-top: 30px;
+    left: 5%;
+    font-style: italic;
+  }
+  .carousel-inner {
+    height: 480px;
+    width: 100%;                
+    background-color: rgb(0,0,0);
+    background: linear-gradient(120deg, rgba(0,0,0,0) 50%, rgb(255,221,0) 0);
+    &:before {
+      content: '';
+      position: absolute;
+      height: 480px;
+      width: 100%;                
+      background-image: url('../images/bg-carousel-home.png');
+      background-position: center right;
+      background-repeat: repeat-x;
+      background-size: 100% auto;
+    }
+    .carousel-item {
+      img {
+        float: right;
+        height: 380px;
+        margin-top: 50px;          
+      }
+    }    
+  }
+  .carousel-caption {
+    position: relative;
+    color: $gray; 
+    text-align: left;
+    height: 480px;
+    .infosCar {
+      @include vertical-align(); 
+      h2 {
+        font-weight: 700;
+        font-style: italic;
+        font-size: 2.7rem;
+        margin-bottom: 0;        
+      }
+      h4 {
+        font-size: 0.9rem;
+        font-weight: 300;        
+        font-style: italic;
+        span {
+          font-weight: 400;        
+          background: $orange;
+          padding: 7px;
+          font-size: 1rem;
+          color: #ffffff;
+        }
+      }
+      .btn {
+        margin-top: 10px;
+      }
+    }
+  }
+  .carousel-indicators {
+    li {
+      background-color: $orange;
+      width: 15px;
+      height: 5px;
+      &.active {
+        background-color: $gray; 
+      }
+    }    
+  }
+}  
+
+//Sections
+section {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  .title {
+    font-weight: 900;
+    font-style: italic;
+    font-size: 1.4rem;
+  }
+}
 
 //Footer
 footer {
@@ -115,6 +259,7 @@ footer {
     .central_vendas {
       font-size: 0.7rem;      
       strong {
+        font-weight: 700;
         font-size: 1.0rem;
         font-style: italic;        
         padding: 0 2px;
@@ -157,7 +302,7 @@ footer {
         a {
             color: $gray;
             font-size: 0.9rem;
-            font-weight: bolder;
+            font-weight: 700;
             &:hover {
               color: $yellow;
               transition: 0.3s;
