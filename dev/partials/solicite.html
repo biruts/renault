@@ -1,0 +1,65 @@
+<div class="solicite">
+	<h2>Solicite uma Proposta</h2>
+	<ul class="nav nav-pills justify-content-center">
+	  <li class="nav-item">
+	    <a class="nav-link active br-left" id="carP" data-toggle="pill" href="#carProposta">Carros</a>
+	  </li>
+	  <li class="nav-item">
+	    <a class="nav-link br-right" id="utilP" data-toggle="pill" href="#utilitariosProposta">Utilitários</a>
+	  </li>
+	</ul>  
+	<div class="tab-content">
+		<div class="tab-pane container active" id="carProposta">
+			<form action="">
+				<div class="form-row">
+					<div class="form-group col-12">
+						<select class="selectpicker listCars" data-live-search="true" data-selected-text-format="count" title="*Selecione um veículo">
+		                  <option value="car1">Carro 1</option>
+		                  <option value="car2">Carro 2</option>
+		                  <option value="car3">Carro 3</option>
+		                </select>
+	            	
+            	
+						<select class="selectpicker hidden listUtil" data-live-search="true" data-selected-text-format="count" title="*Selecione um veículo">
+		                  <option value="util1">Utilitário 1</option>
+		                  <option value="util2">Utilitário 2</option>
+		                  <option value="util3">Utilitário 3</option>
+		                </select>
+	            	</div>
+            	</div>
+            	<div class="form-row">
+					<div class="form-group col-12">
+						<input type="text" class="form-control" id="nome" placeholder="*Seu Nome">
+					</div>
+				</div>
+				<div class="form-row">
+					<div class="form-group col-12 col-md-6">
+						<input type="email" class="form-control" id="email" placeholder="*Seu E-mail">
+					</div>
+					<div class="form-group col-12 col-md-6">
+						<input type="tel" class="form-control" id="tel" placeholder="*Seu Telefone">
+					</div>
+				</div>	
+				<div class="form-row">
+					<div class="form-group col-12">
+						<input type="text" class="form-control" id="local" placeholder="*Bairro ou CEP">
+					</div>
+				</div>
+				<div class="form-group">
+				    <div class="form-check">
+				      <input class="form-check-input" type="checkbox" id="rNovidades">
+				      <label class="form-check-label" for="rNovidades">
+				        Desejo receber novidades
+				      </label>
+				    </div>
+				</div>
+				<div class="form-row">
+					<div class="form-group col-12">
+						<a href="javascript:void(0);" class="btn btn_client btSimule">Solicitar uma Proposta</a>
+					</div>
+				</div>
+			</form>
+		</div>
+  		<!-- <div class="tab-pane container fade" id="utilitariosProposta">...</div> -->
+	</div>		
+</div>

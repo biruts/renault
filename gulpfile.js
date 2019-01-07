@@ -72,12 +72,9 @@ gulp.task('fonts', function() {
 gulp.task('lib', function(){
   return gulp.src([        
     './node_modules/jquery/dist/jquery.min.js',
-    './node_modules/bootstrap/dist/js/bootstrap.min.js',
-    './node_modules/popper.js/dist/umd/popper.min.js',
+    './node_modules/bootstrap/dist/js/bootstrap.bundle.js',        
     './node_modules/@fortawesome/fontawesome-free/js/all.min.js',
-    './node_modules/@fortawesome/fontawesome-free/js/fontawesome.min.js',
-    './node_modules/waypoints/lib/jquery.waypoints.min.js',
-    './node_modules/counterup/jquery.counterup.min.js',
+    './node_modules/@fortawesome/fontawesome-free/js/fontawesome.min.js',        
     './node_modules/jquery.easing/jquery.easing.min.js',    
     './node_modules/bootstrap-select/dist/js/bootstrap-select.min.js',	
 	  './node_modules/jquery-mask-plugin/dist/jquery.mask.min.js',

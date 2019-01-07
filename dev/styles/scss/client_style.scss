@@ -61,7 +61,12 @@ $icon: 'FontAwesome';
     @content;
   }
 }
-
+.br-left {
+  border-radius: 5px 0 0 5px !important;
+}
+.br-right {
+  border-radius: 0 5px 5px 0 !important;
+}
 //Mixins animation
 @mixin fade-up-in($vendor: "") {
   0% {
@@ -76,24 +81,24 @@ $icon: 'FontAwesome';
 
 //Placeholder
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-  color: $gray !important;
-  font-family: 'helvetica_n' !important;
+  color: $gray !important;  
   font-size: 0.9rem;
 }
 ::-moz-placeholder { /* Firefox 19+ */
-  color: $gray !important;
-  font-family: 'helvetica_n' !important;
+  color: $gray !important;  
   font-size: 0.9rem;
 }
 :-ms-input-placeholder { /* IE 10+ */
-  color: $gray !important;
-  font-family: 'helvetica_n' !important;
+  color: $gray !important;  
   font-size: 0.9rem;
 }
 :-moz-placeholder { /* Firefox 18- */
-  color: $gray !important;
-  font-family: 'helvetica_n' !important;
+  color: $gray !important;  
   font-size: 0.9rem;
+}
+.hidden {
+  display: none !important;
+  transition: 0.3s;
 }
 .btn_client {
   background: $yellow;
@@ -105,7 +110,138 @@ $icon: 'FontAwesome';
       transition: 0.3s;
     }
 }
+input[type="checkbox"]{
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+  background: #ffffff;
+  border: 1px solid $orange;
+  box-sizing: border-box;
+  position: relative;
+  box-sizing: content-box ;
+  width: 30px;
+  height: 30px;
+  border-width: 1;
+  transition: all .3s linear;
+  @include border-radius (3px);
+  &:checked{
+    background-color: $yellow-50;
+    text-align: center;
+    &:after {
+      content: '\f00c';
+      font-family: 'Font Awesome\ 5 Free';
+      font-weight: 900;       
+      position: absolute;
+      top: 3px;
+      left: 8px;
+    }
+  }
+  &:focus {
+    outline: 0 none;
+    box-shadow: none;
+  }
+}
+.form-row {
+  .btn_client {
+    width: 100%;
+    padding: 0.9rem;
+  }
+}
+input[type="radio"]{
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+  background: #ffffff;
+  border: 1px solid $orange;
+  box-sizing: border-box;
+  position: relative;
+  box-sizing: content-box ;
+  width: 25px;
+  height: 25px;
+  border-width: 1;
+  transition: all .3s linear;
+  @include border-radius (100px);
+  &:checked{
+    background-color: $yellow-50;
+    text-align: center;
+    &:after {
+      content: '\f111';
+      font-family: 'Font Awesome\ 5 Free';
+      font-weight: 900;       
+      position: absolute;
+      font-size: 0.9rem;
+      top: 3px;
+      left: 6px;
+      color: $orange;
+    }
+  }
+  &:focus {
+    outline: 0 none;
+    box-shadow: none;
+  }
+}
+.form-check {
+  .form-check-label {
+    position: absolute;
+    top: 9px;
+    left: 41px;
+  } 
+}
 
+.form-check-inline {
+  .form-check-label {
+    position: inherit;
+    top: 2px;
+    left: 1px;
+  }
+}
+.form-control {
+  color: $gray;
+  border-color: $orange;      
+}
+.bootstrap-select {
+  width: 100% !important;
+  color: $gray;
+  button {
+    background: #fff;
+    border-color: $orange;    
+    &:focus,
+    &:hover {
+      background: #fff;
+      border-color: $orange;    
+    }
+  }
+  .dropdown-toggle {
+    &.bs-placeholder {
+      color: $gray;
+    }
+    &:before {
+      display: none;
+    }
+    &:after {
+      content: '\f0ab';
+      font-family: 'Font Awesome\ 5 Free';
+      font-weight: 900;
+      border: 0 !important;
+      margin-left: 0;
+      margin-right: 12px;
+      color: $orange !important;      
+    }
+  }
+  &.show {
+    .btn-light.dropdown-toggle {
+      color: $gray;
+      background-color: $yellow-50;
+      border-color: $orange;    
+    }
+  }
+  .dropdown-item{
+    &.active {
+      background-color: $yellow-50;
+      color: $gray;
+    }
+  }
+}
 body {
   color: $gray;
 }
@@ -155,6 +291,68 @@ header {
           }
       }
   }
+}
+//Solicite
+.solicite {
+  width: 100%;
+  height: 481px;
+  background: #fff;
+  position: absolute;
+  z-index: 2;
+  h2 {
+    padding-top: 15px;
+    text-align: center;
+    font-size: 1.7rem;
+    font-weight: 900;
+    font-style: italic;
+    color: $gray;
+  }
+  .nav-link {
+    color: #ffffff;
+    background-color: $orange;      
+    padding: 0.5rem 2.85rem;          
+    text-transform: uppercase;
+    font-weight: 700;
+    &.active {
+      background-color: $yellow;
+      color: $gray;
+    }
+  }
+  ul {
+    margin-top: 20px;
+  }
+  .tab-content {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}
+
+//Simule
+#modalSimule {
+  .modal-md {
+    max-width: 380px;
+  }
+}
+.simule {
+  padding-top: 10px;
+  padding-bottom: 20px;
+  h2 {
+    padding-top: 15px;
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    font-weight: 900;
+    font-style: italic;
+    color: $gray;
+  }
+  .close {
+    color: $gray;
+    opacity: 1;
+    line-height: 1.4rem;
+    text-shadow: 0;
+    text-decoration: underline;
+    font-size: 0.8rem;
+  }    
 }
 
 //Carousel
@@ -243,6 +441,210 @@ section {
     font-weight: 900;
     font-style: italic;
     font-size: 1.4rem;
+  }
+}
+
+#showRoom {
+  h2 {
+    display: inline-block;
+  }
+  .scale-anm {
+    transform: scale(1);
+  }
+  .nav {
+    float: right;
+    &:before {
+      content: '*Selecione um tipo de veículo:';
+      margin-right: 10px;
+      padding-top: 6px;
+      font-size: 0.8rem;
+    }
+    .nav-link {
+      color: #ffffff;
+      background-color: $orange;
+      border-radius: 0;  
+      padding: .2rem 1rem;          
+      &.active {
+        background-color: $yellow;
+        color: $gray;
+      }
+    }    
+  }
+  #veiculos {
+    padding: 30px 0; 
+    .veic_thumb {
+      width: 255px;
+      height: 143px;  
+      margin-bottom: 30px;      
+      overflow: hidden;
+      position: relative;
+      figure {
+        transition: 0.3s;
+      }
+      .info_veic {
+        text-align: center;
+        background: $yellow-50;
+        width: 243px;
+        height: 131px;
+        padding: 5px;
+        border: 1px solid $orange;
+        top: 0;
+        position: absolute;
+        opacity: 0;
+        transition: 0.3s;
+        .cont {
+          @include vertical-align ();
+          h3 {
+            margin-bottom: 0;
+            font-weight: 900;        
+            font-size: 1.4rem;
+            font-style: italic;
+          }
+          .parc {
+            font-size: 0.8rem;
+            display: block;
+            width: 150px;
+            margin: 0 auto;
+            text-align: left;
+            span {
+              display: table;              
+              margin-bottom: 10px;
+              font-weight: 400;        
+              background: $gray;
+              padding: 7px;
+              font-size: 0.8rem;
+              color: #ffffff;
+            }
+          }
+          .btn_client {
+            background: $orange;
+            color: #ffffff;
+            padding: 4px 5px;
+            font-size: 0.9rem;
+          }
+        }  
+      } 
+      &:hover {
+        .info_veic {
+          opacity: 1;
+          transition: 0.3s;
+        }
+        figure {
+          opacity: 0.2;
+          transition: 0.3s;
+        }
+      }     
+    }
+  }
+}
+
+//Fique por Dentro
+#fpDentro {
+  .row {
+    margin-bottom: 40px;
+  }
+  .pdl-0 {
+    padding-left: 0;
+  }
+  .pdr-0 {
+    padding-right: 0;    
+  }
+  .pd-l-10 {
+    padding-left: 10px;
+  }
+  .pd-r-11 {
+    padding-right: 11px;
+  }
+  .news {
+    display: flex;
+    figure {
+      margin-bottom: 0;
+      width: 280px;
+      height: auto;  
+    }
+    &.txl{
+      text-align: left;
+    }
+    &.txr{
+     text-align: right;      
+    }
+    .date {
+      background: $orange;
+      display: table;
+      padding: 2px 4px;
+      position: absolute;
+      top: 20px;
+      color: #fff;
+      .day{
+        font-weight: 300;  
+        margin-right: 3px;
+        font-style: italic;
+      }
+      .month {
+       font-weight: 700; 
+       font-style: italic;  
+      }
+    }    
+  }
+  article {
+    padding: 5px 10px;
+    color: $gray;
+    height: 183px;
+    overflow: hidden;
+    position: relative;
+    div {
+      @include vertical-align (); 
+      h3 {
+        font-size: 1.1rem;
+      } 
+      p {
+        font-size: 0.8rem;
+      }
+      a {
+        color: $gray;
+        font-style: italic;
+        text-decoration: underline;
+      }
+    }  
+  }
+}
+
+//Duvidas
+#duvidas {
+  .col-md-12 {
+    display: flex;    
+  } 
+  figure {
+    margin-top: -77px;
+  }
+  &:before {
+    left: 0;
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 150px;
+    background: $yellow;
+  }
+  .chamada {
+    padding: 10px 0;
+    h3 {
+      color: $gray;
+      font-weight: 700;
+      font-style: italic;
+      margin-bottom: 0; 
+    }
+    p {
+      font-size: 0.9rem;
+    }
+    .btn_client {
+      background: $orange;
+      color: #ffffff;
+      padding: 4px 5px;
+      font-size: 0.9rem;
+      &:hover {
+        background: $brown;
+      }
+    }
   }
 }
 
